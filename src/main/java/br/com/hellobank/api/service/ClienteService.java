@@ -25,18 +25,11 @@ public class ClienteService implements IClienteService {
         return dao.findById(id).orElse(null);
     }
 
-    //******
     @Override
-    public Cliente listarPeloCpf(String cpf) {
-        return null;
+    public ArrayList<Cliente> listarPeloNome(String nome) {
+        return dao.findBynomeContaining(nome);
     }
-
-    //******
-    @Override
-    public Cliente listarPeloRg(String rg) {
-        return null;
-    }
-
+    
     //POST
     @Override
     public Cliente cadastrarNovo(Cliente novo) {
@@ -54,5 +47,6 @@ public class ClienteService implements IClienteService {
     public void deletarCliente(Integer id) {
         dao.deleteById(id);
     }
-    
+
+
 }

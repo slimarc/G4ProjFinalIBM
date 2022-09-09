@@ -9,8 +9,7 @@ public interface IClienteService {
     //GET
     public ArrayList<Cliente> listarTodos();
     public Cliente listarPeloId(Integer id);
-    public Cliente listarPeloCpf(String cpf);
-    public Cliente listarPeloRg (String rg);
+    public ArrayList<Cliente> listarPeloNome(String nome);
     
     //POST
     public Cliente cadastrarNovo(Cliente novo);
