@@ -20,7 +20,7 @@ public class Endereco {
     private String logradouro;
 
     @Column(name = "numero", length = 5)
-    private Integer numero;
+    private String numero;
 
     @Column(name = "bairro", length = 45)
     private String bairro;
@@ -32,7 +32,7 @@ public class Endereco {
     private String uf;
     
     @Column(name = "cep", length = 10)
-    private String cep;
+    private Integer cep;
 
     public Integer getIdEndereco() {
         return idEndereco;
@@ -50,11 +50,11 @@ public class Endereco {
         this.logradouro = logradouro;
     }
 
-    public Integer getNumero() {
+    public String getNumero() {
         return numero;
     }
 
-    public void setNumero(Integer numero) {
+    public void setNumero(String numero) {
         this.numero = numero;
     }
 
@@ -82,19 +82,14 @@ public class Endereco {
         this.uf = uf;
     }
 
-    public String getCep() {
+    public Integer getCep() {
         return cep;
     }
 
-    public void setCep(String cep) {
+    public void setCep(Integer cep) {
         this.cep = cep;
     }
 
-    @Override
-    public String toString() {
-        return "Endereco [bairro=" + bairro + ", cep=" + cep + ", cidade=" + cidade + ", idEndereco=" + idEndereco
-                + ", logradouro=" + logradouro + ", numero=" + numero + ", uf=" + uf + "]";
-    }
-    
-    
+
+
 }
