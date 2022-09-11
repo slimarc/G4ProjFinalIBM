@@ -5,7 +5,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name = "Endereco")
@@ -32,7 +36,20 @@ public class Endereco {
     private String uf;
     
     @Column(name = "cep", length = 10)
-    private Integer cep;
+    private String cep;
+
+    @ManyToOne
+    @JoinColumn(name = "cliente_idcliente")
+    @JsonIgnoreProperties("listaEndereco")
+    private Cliente cliente;
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
 
     public Integer getIdEndereco() {
         return idEndereco;
@@ -82,11 +99,11 @@ public class Endereco {
         this.uf = uf;
     }
 
-    public Integer getCep() {
+    public String getCep() {
         return cep;
     }
 
-    public void setCep(Integer cep) {
+    public void setCep(String cep) {
         this.cep = cep;
     }
 

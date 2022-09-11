@@ -6,7 +6,6 @@ import org.springframework.data.repository.CrudRepository;
 
 import br.com.hellobank.api.model.Endereco;
 
-public interface EnderecoDAO extends CrudRepository<Endereco,Integer> {
-    ArrayList<Endereco> findByCep(Integer cep);
-
+public interface EnderecoDAO extends CrudRepository<Endereco, Integer> {
+    ArrayList<Endereco> findByCep(String cep);
 }

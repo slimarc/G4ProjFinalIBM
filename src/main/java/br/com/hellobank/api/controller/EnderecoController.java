@@ -25,7 +25,7 @@ public class EnderecoController {
     }
 
     @GetMapping("/enderecos/{cep}")
-	public ResponseEntity<ArrayList<Endereco>> recuperarPeloNumero(@PathVariable Integer cep){
+	public ResponseEntity<ArrayList<Endereco>> recuperarPeloNumero(@PathVariable String cep){
 		ArrayList<Endereco> endereco = service.listarPeloCep(cep);
 		if (endereco != null) {
 			return ResponseEntity.ok(endereco);

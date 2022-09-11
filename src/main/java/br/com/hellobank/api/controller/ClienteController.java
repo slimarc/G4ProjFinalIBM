@@ -16,13 +16,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.hellobank.api.model.Cliente;
-import br.com.hellobank.api.service.ClienteService;
+import br.com.hellobank.api.service.IClienteService;
 
 @RestController
 public class ClienteController {
      
      @Autowired
-     private ClienteService service;
+     private IClienteService service;
 
      @GetMapping("/clientes")
      private ArrayList<Cliente> listarTodos(){
@@ -30,7 +30,7 @@ public class ClienteController {
      }
 
      @GetMapping("/clientes/{id}")
-     public ResponseEntity<Cliente> listarPeloI(@PathVariable Integer id){
+     public ResponseEntity<Cliente> listarPeloId(@PathVariable Integer id){
           Cliente cliente = service.listarPeloId(id);
           if(cliente != null){
                return ResponseEntity.ok(cliente);
@@ -43,7 +43,7 @@ public class ClienteController {
           return service.listarPeloNome(nome);
      }
 
-     @PostMapping("/clientes")
+     @PostMapping("/clientes/")
      public ResponseEntity<Cliente> cadastrarNovo(@RequestBody Cliente novo){
           Cliente cliente = service.cadastrarNovo(novo);
           if(cliente != null){
@@ -52,7 +52,7 @@ public class ClienteController {
           return ResponseEntity.badRequest().build();
      }
      
-     @PutMapping("/clientes")
+     @PutMapping("/clientes/")
      public ResponseEntity<Cliente> atualizarCliente(@RequestBody Cliente atualiza){
           Cliente cliente = service.atualizarCliente(atualiza);
           if(cliente != null){

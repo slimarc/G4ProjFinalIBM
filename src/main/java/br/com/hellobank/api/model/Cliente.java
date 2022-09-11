@@ -1,13 +1,18 @@
 package br.com.hellobank.api.model;
 
 import java.time.LocalDate;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name = "Cliente")
@@ -15,7 +20,7 @@ public class Cliente {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY )
-    @Column(name = "id_cliente")
+    @Column(name = "idcliente")
     private Integer id;
     
     @Column(name = "nome", length = 45, nullable = false)
@@ -27,14 +32,38 @@ public class Cliente {
     @Column(name = "rg", length = 45, nullable = false, unique = true)
     private String rg;
     
-    @Column(name = "dataNascimento")
+    @Column(name = "data_nascimento")
     private LocalDate dataNasc ;
 
-    @Column(name = "telefone", length = 45, nullable = false)
+    @Column(name = "tel", length = 45, nullable = false)
     private String telefone;
 
     @Column(name = "email", length = 45, nullable =  false, unique = true)
     private String email;
+
+    @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL)
+	@JsonIgnoreProperties("cliente")
+    private List<Endereco> listaEndereco;
+
+    @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL)
+	@JsonIgnoreProperties("cliente")
+    private List<Conta> listaConta;
+
+    public List<Conta> getlistaConta() {
+        return listaConta;
+    }
+
+    public void setlistaConta(List<Conta> listaConta) {
+        this.listaConta = listaConta;
+    }
+
+    public List<Endereco> getListaEndereco() {
+        return listaEndereco;
+    }
+
+    public void setListaEndereco(List<Endereco> listaEndereco) {
+        this.listaEndereco = listaEndereco;
+    }
 
     public Integer getId() {
         return id;
