@@ -21,14 +21,17 @@ public class EnderecoService implements IEnderecoService {
     }
 
     @Override
-    public ArrayList<Endereco> listarPeloCep(Integer cep) {
+    public ArrayList<Endereco> listarPeloCep(String cep) {
         return dao.findByCep(cep);
     }
-     
+
+   
     //POST
     @Override
     public Endereco cadastarNovo(Endereco cadastrar) {
         return dao.save(cadastrar);
     }
+
+
     
 }
