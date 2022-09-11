@@ -29,14 +29,6 @@
   <br>
   <img src="https://img.shields.io/badge/-Linkedin-1C1C1C?style=for-the-badge&logo=Linkedin&logoColor=00FFFF&link=https://https://www.linkedin.com/in/cassia-leal/"  style= "width:90px;"/>
   </a>
-  
-  <td align="center"><img style="width: 70%; border-radius: 50%" 
-  src="https://avatars.githubusercontent.com/u/102270820?v=4"
-  alt="Tainã Xavier"/><br /><sub><b>Tainã Xavier</b></sub></a><br />
-  <a href="https://www.linkedin.com/in/tainaxsp/" alt="Linkedin">
-  <br>
-  <img src="https://img.shields.io/badge/-Linkedin-1C1C1C?style=for-the-badge&logo=Linkedin&logoColor=00FFFF&link=https://https://www.linkedin.com/in/tainaxsp/" style= "width:90px;"/>
-  </a>
 
   <td align="center"><img style="width: 70%; border-radius: 50%" 
   src="https://avatars.githubusercontent.com/u/93914935?v=4"
