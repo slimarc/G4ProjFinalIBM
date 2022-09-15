@@ -62,6 +62,14 @@
   <br>
   <img src="https://img.shields.io/badge/-Linkedin-1C1C1C?style=for-the-badge&logo=Linkedin&logoColor=00FFFF&link=https://www.linkedin.com/in/lucas-gomesprf/" style= "width:90px;"/>
   </a>
+  
+  <td align="center"><img style="width: 70%; border-radius: 50%" 
+  src="https://avatars.githubusercontent.com/u/84542588?v=4"
+  alt="Maryjane Ifunanya"/><br /><sub><b>Maryjane Ifunanya</b></sub></a><br />
+  <a href="https://www.linkedin.com/in/lucas-gomesprf/" alt="Linkedin">
+  <br>
+  <img src="https://img.shields.io/badge/-Linkedin-1C1C1C?style=for-the-badge&logo=Linkedin&logoColor=00FFFF&link=https://www.linkedin.com/in/maryjane-ifunanya-500287209/" style= "width:90px;"/>
+  </a>
 
 </table>
    
