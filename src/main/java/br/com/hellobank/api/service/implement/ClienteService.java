@@ -1,4 +1,4 @@
-package br.com.hellobank.api.service;
+package br.com.hellobank.api.service.implement;
 
 import java.util.ArrayList;
 
@@ -6,7 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.com.hellobank.api.dao.ClienteDAO;
-import br.com.hellobank.api.model.Cliente;
+import br.com.hellobank.api.model.entity.Cliente;
+import br.com.hellobank.api.service.interfaceServ.IClienteService;
 
 @Service
 public class ClienteService implements IClienteService {

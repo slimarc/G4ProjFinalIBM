@@ -1,4 +1,4 @@
-package br.com.hellobank.api.model;
+package br.com.hellobank.api.model.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
