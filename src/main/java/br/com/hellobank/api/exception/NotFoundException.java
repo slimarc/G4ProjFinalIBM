@@ -6,13 +6,13 @@ public class NotFoundException {
     private String error;
 
     public NotFoundException(String error, String response, String field) {
-        super(response);
+        super();
         this.field = field;
         this.error = error;
     }
 
     public NotFoundException(String response) {
-        super(response);
+        super();
     }
 
     public String getField() {
@@ -22,4 +22,8 @@ public class NotFoundException {
     public String getError() {
         return error;
     }
+
+	public String getMessage() {
+		return null;
+	}
 }

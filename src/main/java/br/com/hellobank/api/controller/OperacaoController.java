@@ -18,6 +18,7 @@ import br.com.hellobank.api.model.request.TransferenciaRequest;
 import br.com.hellobank.api.model.response.SaqueResponse;
 import br.com.hellobank.api.model.response.DepositoResponse;
 import br.com.hellobank.api.model.response.TransferenciaResponse;
+import br.com.hellobank.api.service.interfaceServ.IOperacaoService;
 import br.com.hellobank.api.service.interfaceServ.OperacaoService;
 
 @RestController
@@ -46,7 +47,7 @@ public class OperacaoController {
     }
 
     @PostMapping( value = "/transferencia", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity transferencia(@RequestBody TransferenciaRequest transferenciaRequest) {
+    public ResponseEntity cashOut(@RequestBody TransferenciaRequest transferenciaRequest) {
         TransferenciaResponse transferenciaResponse = operacaoService.transferencia(transferenciaRequest);
         return new ResponseEntity<>(transferenciaResponse, HttpStatus.OK);
     }

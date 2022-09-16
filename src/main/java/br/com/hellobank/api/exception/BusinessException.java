@@ -5,18 +5,18 @@ public class BusinessException {
     private String error;
 
     public BusinessException(String error, String response, String field) {
-        super(response);
+        super();
         this.field = field;
         this.error = error;
     }
 
     public BusinessException(String error, String response) {
-        super(response);
+        super();
         this.error = error;
     }
 
     public BusinessException(String response) {
-        super(response);
+        super();
     }
 
     public String getField() {
@@ -26,4 +26,8 @@ public class BusinessException {
     public String getError() {
         return error;
     }
+
+	public String getMessage() {
+		return null;
+	}
 }
