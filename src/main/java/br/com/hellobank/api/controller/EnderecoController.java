@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.hellobank.api.model.Endereco;
-import br.com.hellobank.api.service.IEnderecoService;
+import br.com.hellobank.api.model.entity.Endereco;
+import br.com.hellobank.api.service.interfaceServ.IEnderecoService;
 
 @RestController
 public class EnderecoController {

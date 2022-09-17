@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import org.springframework.data.repository.CrudRepository;
 
-import br.com.hellobank.api.model.Cliente;
+import br.com.hellobank.api.model.entity.Cliente;
 
 public interface ClienteDAO extends CrudRepository<Cliente, Integer> {
     
