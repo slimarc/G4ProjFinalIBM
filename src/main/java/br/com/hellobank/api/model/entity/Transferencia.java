@@ -64,8 +64,5 @@ public class Transferencia {
         this.saldo = saldo;
     }
 
-    @Override
-    public String toString() {
-        return "Transferencia{" +"idconta=" + idconta +", cliente_idcliente=" + cliente_idcliente +", tipo=" + tipo +", saldo=" + saldo +'}';
-    }
+    
 }
