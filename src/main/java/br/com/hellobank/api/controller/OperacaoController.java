@@ -1,5 +1,6 @@
 package br.com.hellobank.api.controller;
 
+import java.security.Provider.Service;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -32,21 +33,30 @@ public class OperacaoController {
         String saldo = operacaoService.getSaldo(Integer.valueOf(contaId));
         return new ResponseEntity<>(saldo, HttpStatus.OK);
     }
-
+//==============
     @PostMapping(value = "/deposito", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity deposito(@RequestBody DepositoRequest depositoRequest) {
+    public ResponseEntity<DepositoResponse> deposito(@RequestBody DepositoRequest depositoRequest) {
         DepositoResponse depositoResponse = operacaoService.deposito(depositoRequest);
         return new ResponseEntity<>(depositoResponse, HttpStatus.OK);
     }
 
+    /*@PostMapping("/clientes/") 
+     public ResponseEntity<DepositoResponse> deposito(@RequestBody DepositoRequest depositoRequest){
+          DepositoResponse dep = operacaoService.deposito(depositoRequest);
+          if(dep != null){
+               return ResponseEntity.ok(dep);
+          }
+          return ResponseEntity.badRequest().build();
+     }*/
+//================
     @PostMapping( value = "/saque", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity cashOut(@RequestBody SaqueRequest saqueRequest) {
+    public ResponseEntity<SaqueResponse> saque(@RequestBody SaqueRequest saqueRequest) {
         SaqueResponse saqueResponse = operacaoService.saque(saqueRequest);
         return new ResponseEntity<>(saqueResponse, HttpStatus.OK);
     }
 
     @PostMapping( value = "/transferencia", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity cashOut(@RequestBody TransferenciaRequest transferenciaRequest) {
+    public ResponseEntity<TransferenciaResponse> Transferencia(@RequestBody TransferenciaRequest transferenciaRequest) {
         TransferenciaResponse transferenciaResponse = operacaoService.transferencia(transferenciaRequest);
         return new ResponseEntity<>(transferenciaResponse, HttpStatus.OK);
     }
