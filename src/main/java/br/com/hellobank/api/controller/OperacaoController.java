@@ -18,6 +18,7 @@ import br.com.hellobank.api.model.request.TransferenciaRequest;
 import br.com.hellobank.api.model.response.SaqueResponse;
 import br.com.hellobank.api.model.response.DepositoResponse;
 import br.com.hellobank.api.model.response.TransferenciaResponse;
+import br.com.hellobank.api.model.response.TransferenciasResponse;
 import br.com.hellobank.api.service.interfaceServ.IOperacaoService;
 
 @RestController
@@ -28,11 +29,11 @@ public class OperacaoController {
     private IOperacaoService operacaoService;
 
     @GetMapping(value = "/saldo/{contaId}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<String> balance(@PathVariable("contaId") Integer contaId) {
+    public ResponseEntity<String> saldo(@PathVariable("contaId") Integer contaId) {
         String saldo = operacaoService.getSaldo(Integer.valueOf(contaId));
         return new ResponseEntity<>(saldo, HttpStatus.OK);
     }
-    
+
     @PostMapping(value = "/deposito", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<DepositoResponse> deposito(@RequestBody DepositoRequest depositoRequest) {
         DepositoResponse depositoResponse = operacaoService.deposito(depositoRequest);
@@ -46,13 +47,13 @@ public class OperacaoController {
     }
 
     @PostMapping( value = "/transferencia", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<TransferenciaResponse> Transferencia(@RequestBody TransferenciaRequest transferenciaRequest) {
+    public ResponseEntity<TransferenciaResponse> transferencia(@RequestBody TransferenciaRequest transferenciaRequest) {
         TransferenciaResponse transferenciaResponse = operacaoService.transferencia(transferenciaRequest);
         return new ResponseEntity<>(transferenciaResponse, HttpStatus.OK);
     }
 
     @GetMapping( value = "/contaTransacoes/{contaId}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity contaTransacoes(@PathVariable("contaId") Integer contaId) {
+    public ResponseEntity<> contaTransacoes(@PathVariable("contaId") Integer contaId) {
         List<Transferencia> transferencias = operacaoService.getTransferencias(Long.valueOf(contaId));
         return new ResponseEntity<>(transferencias, HttpStatus.OK);
     }

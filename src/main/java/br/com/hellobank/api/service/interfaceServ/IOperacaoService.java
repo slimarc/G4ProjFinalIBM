@@ -2,6 +2,7 @@ package br.com.hellobank.api.service.interfaceServ;
 
 import java.util.List;
 
+import br.com.hellobank.api.model.entidades.Transacao;
 import br.com.hellobank.api.model.entidades.Transferencia;
 import br.com.hellobank.api.model.request.SaqueRequest;
 import br.com.hellobank.api.model.request.DepositoRequest;
@@ -20,7 +21,7 @@ public interface IOperacaoService {
 
     SaqueResponse saque(SaqueRequest saqueRequest);
 
-    List<Transferencia> getTransferencias(Integer id);
+    List<Transacao> getTransferencias(Integer id);
 
     void validaTransferencia(TransferenciaRequest transferenciaRequest);
 

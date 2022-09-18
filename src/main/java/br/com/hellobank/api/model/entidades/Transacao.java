@@ -29,6 +29,9 @@ public class Transacao {
         this.tipoTransacao = tipo.name();
     }
 
+    public Transacao(String data2, double valor2, TipoTransferencia deposito) {
+    }
+
     public Integer getContaIdSaida() {
         return contaIdSaida;
     }
