@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import br.com.hellobank.api.model.entity.Transferencia;
+import br.com.hellobank.api.model.entidades.Transferencia;
 import br.com.hellobank.api.model.request.TransferenciaRequest;
 import br.com.hellobank.api.dao.TransferenciaDAO;
 import br.com.hellobank.api.service.interfaceServ.ITransferenciaService;
@@ -26,7 +26,7 @@ public  class TransferenciaImpl implements ITransferenciaService {
     }
 
     @Override
-    public List<Transferencia> findClienteTransferencia(Long id) {
+    public List<Transferencia> findClienteTransferencia(Integer id) {
         return transferenciaDAO.getTransferenciaById_conta(id);
     }
 }

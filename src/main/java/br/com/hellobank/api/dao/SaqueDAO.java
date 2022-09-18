@@ -7,12 +7,11 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 
-import br.com.hellobank.api.model.entity.Saque;
+import br.com.hellobank.api.model.entidades.Saque;
 
 @Repository
-public interface SaqueDAO extends JpaRepository<Saque, Long> {
+public interface SaqueDAO extends JpaRepository<Saque, Integer> {
 
-    @Query(value = "SELECT * FROM saque WHERE conta_id = ?1", name =
-            "findSaque", nativeQuery = true)
-    List<Saque> getSaqueById_conta(Long contaId);
+    @Query(value = "SELECT * FROM saque WHERE conta_id = ?1", name ="findSaque", nativeQuery = true)
+    List<Saque> getSaqueById_conta(Integer contaId);
 }

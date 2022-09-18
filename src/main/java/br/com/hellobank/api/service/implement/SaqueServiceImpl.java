@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import br.com.hellobank.api.model.entity.Saque;
+import br.com.hellobank.api.model.entidades.Saque;
 import br.com.hellobank.api.model.request.SaqueRequest;
 import br.com.hellobank.api.dao.SaqueDAO;
 import br.com.hellobank.api.service.interfaceServ.ISaqueService;
@@ -26,7 +26,7 @@ public class SaqueServiceImpl implements ISaqueService {
     }
 
     @Override
-    public List<Saque> findClienteSaques(Long id) {
+    public List<Saque> findClienteSaques(Integer id) {
         return saqueDAO.getSaqueById_conta(id);
     }
 }
