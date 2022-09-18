@@ -2,7 +2,7 @@ package br.com.hellobank.api.service.interfaceServ;
 
 import java.util.ArrayList;
 
-import br.com.hellobank.api.model.entity.Cliente;
+import br.com.hellobank.api.model.entidades.Cliente;
 
 public interface IClienteService {
     

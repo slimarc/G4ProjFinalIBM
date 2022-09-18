@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.hellobank.api.model.entity.Cliente;
+import br.com.hellobank.api.model.entidades.Cliente;
 import br.com.hellobank.api.service.interfaceServ.IClienteService;
 
 @RestController
