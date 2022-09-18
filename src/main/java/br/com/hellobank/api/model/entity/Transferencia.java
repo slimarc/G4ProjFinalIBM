@@ -1,13 +1,18 @@
 package br.com.hellobank.api.model.entity;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
+import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import br.com.hellobank.api.util.DateHour;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name = "transferencia")
@@ -15,54 +20,52 @@ public class Transferencia {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Column(name = "idconta")
+    private Integer idconta;
 
-    private Long contaId;
-    private double valor;
-    private LocalDateTime data;
+    @Column(name = "cliente_idcliente", length = 45, nullable = true)
+    private Integer cliente_idcliente;
 
-    public Transferencia(){}
+    @Column(name = "tipo", length = 45, nullable = false, unique = true)
+    private Integer tipo;
 
-    public Transferencia(Long contaId, double valor) {
-        this.contaId = contaId;
-        this.valor = valor;
-        this.data = LocalDateTime.now();
+    @Column(name = "saldo", length = 45, nullable = false, unique = true)
+    private Double saldo;
+
+    public Integer getidconta() {
+        return idconta;
     }
 
-    public Long getId() {
-        return id;
+    public void setidconta(Long Integer) {
+        this.idconta = idconta;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public Integer getcliente_idcliente() {
+        return cliente_idcliente;
     }
 
-    public Long getContaId() {
-        return contaId;
+    public void setcliente_idcliente(Integer cliente_idcliente) {
+        this.cliente_idcliente = cliente_idcliente;
     }
 
-    public void setContaId(Long contaId) {
-        this.contaId = contaId;
+    public Integer gettipo() {
+        return tipo;
     }
 
-    public double getValor() {
-        return valor;
+    public void settipo(Integer tipo) {
+        this.tipo = tipo;
     }
 
-    public void setValor(double valor) {
-        this.valor = valor;
+    public Double getsaldo() {
+        return  saldo;
     }
 
-    public String getData() {
-        return DateHour.format(data);
-    }
-
-    public void setData(LocalDateTime data) {
-        this.data = data;
+    public void setsaldo(Double saldo) {
+        this.saldo = saldo;
     }
 
     @Override
     public String toString() {
-        return "Transferencia{" +"id=" + id +", contaId=" + contaId +", valor=" + valor +", data=" + data +'}';
+        return "Transferencia{" +"idconta=" + idconta +", cliente_idcliente=" + cliente_idcliente +", tipo=" + tipo +", saldo=" + saldo +'}';
     }
 }
