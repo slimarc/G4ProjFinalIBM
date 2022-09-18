@@ -29,13 +29,6 @@ public class Transacao {
         this.tipoTransacao = tipo.name();
     }
 
-    public Transacao(String data, double valor, TipoTransferencia tipo) {
-        //this.contaIdSaida = contaIdSaida;
-        this.data = data;
-        this.valor = valor;
-        this.tipoTransacao = tipo.name();
-    }
-
     public Integer getContaIdSaida() {
         return contaIdSaida;
     }

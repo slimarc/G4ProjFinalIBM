@@ -6,7 +6,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Min;
 
+import br.com.hellobank.api.model.request.TransferenciaRequest;
 import br.com.hellobank.api.util.DateHour;
 
 @Entity
@@ -17,16 +19,20 @@ public class Transferencia {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    private Integer contaId;
-    private double valor;
+    private Integer contaIdSaida;
+    private Integer contaIdRecebe;
     private LocalDateTime data;
+
+    @Min(value = 0l)
+    private double valor;
 
     public Transferencia(){}
 
-    public Transferencia(Integer contaId, double valor) {
-        this.contaId = contaId;
-        this.valor = valor;
-        this.data = LocalDateTime.now();
+    public Transferencia(TransferenciaRequest transferenciaRequest) {
+        this.contaIdSaida = transferenciaRequest.getContaIdSaida();
+		this.contaIdRecebe = transferenciaRequest.getContaIdRecebe();
+		this.valor = transferenciaRequest.getValor();
+		this.data = LocalDateTime.now();
     }
 
     public Integer getId() {
@@ -35,14 +41,6 @@ public class Transferencia {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public Integer getContaId() {
-        return contaId;
-    }
-
-    public void setContaId(Integer contaId) {
-        this.contaId = contaId;
     }
 
     public double getValor() {
@@ -61,8 +59,27 @@ public class Transferencia {
         this.data = data;
     }
 
+    public Integer getContaIdSaida() {
+        return contaIdSaida;
+    }
+
+    public void setContaIdSaida(Integer contaIdSaida) {
+        this.contaIdSaida = contaIdSaida;
+    }
+
+    public Integer getContaIdRecebe() {
+        return contaIdRecebe;
+    }
+
+    public void setContaIdRecebe(Integer contaIdRecebe) {
+        this.contaIdRecebe = contaIdRecebe;
+    }
+
     @Override
     public String toString() {
-        return "Transferencia{" +"id=" + id +", contaId=" + contaId +", valor=" + valor +", data=" + data +'}';
+        return "Transferencia [contaIdRecebe=" + contaIdRecebe + ", contaIdSaida=" + contaIdSaida + ", data=" + data
+                + ", id=" + id + ", valor=" + valor + "]";
     }
+
+   
 }

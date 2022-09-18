@@ -6,6 +6,8 @@ import javax.validation.constraints.NotBlank;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.Objects;
+
 public class DepositoRequest {
 
     //NotBlank indica que os atibutos contaId e valor não podem estar em branco
@@ -38,6 +40,19 @@ public class DepositoRequest {
 
     public void setValor(double valor) {
         this.valor = valor;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        DepositoRequest that = (DepositoRequest) o;
+        return Double.compare(that.valor, valor) == 0 && Objects.equals(contaId, that.contaId);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(contaId, valor);
     }
 
     @Override

@@ -23,4 +23,6 @@ public interface IOperacaoService {
     List<Transferencia> getTransferencias(Integer id);
 
     void validaTransferencia(TransferenciaRequest transferenciaRequest);
+
+    List<Transferencia> getTransferencias(Long valueOf);
 }

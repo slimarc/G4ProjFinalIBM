@@ -7,6 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import br.com.hellobank.api.model.request.DepositoRequest;
 import br.com.hellobank.api.util.DateHour;
 
 @Entity
@@ -23,9 +24,9 @@ public class Deposito {
 
     public Deposito(){}
 
-    public Deposito(Integer contaId, double valor) {
-        this.contaId = contaId;
-        this.valor = valor;
+    public Deposito(DepositoRequest depositoRequest) {
+        this.contaId = depositoRequest.getContaId();
+        this.valor = depositoRequest.getValor();
         this.data = LocalDateTime.now();
     }
 

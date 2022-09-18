@@ -8,8 +8,11 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class TransferenciaRequest {
 
+    @NotBlank(message = "Informe a conta de origem para a Transferência!")
+    private Integer contaIdSaida;
+
     @NotBlank(message = "Informe a conta de destino para a Transferência!")
-    private Integer contaId;
+    private Integer contaIdRecebe;
 
     @NotBlank(message = "O campo deve ser informado!")
     @Min(1)
@@ -17,19 +20,37 @@ public class TransferenciaRequest {
 
     @JsonCreator(mode = JsonCreator.Mode.DEFAULT)
     public TransferenciaRequest(
-        @JsonProperty("contaId") @NotBlank(message = "Informe a conta de destino para a Transferência!") Integer contaId,
+        @JsonProperty("saidaContaId") Integer contaIdSaida,
+        @JsonProperty("recebeContaId") Integer contaIdRecebe,
         @JsonProperty("valor") double valor) {
-        this.contaId = contaId;
+        this.contaIdSaida = contaIdSaida;
+        this.contaIdRecebe = contaIdRecebe;
         this.valor = valor;
+        }
+
+    public Integer getContaIdSaida() {
+        return contaIdSaida;
     }
 
-    public @NotBlank(message = "Informe a conta de destino para a Transferência!") Integer getContaId() {
-        return contaId;
+
+
+    public void setContaIdSaida(Integer contaIdSaida) {
+        this.contaIdSaida = contaIdSaida;
     }
 
-    public void setContaId(@NotBlank(message = "Informe a conta de destino para a Transferência!") Integer contaId) {
-        this.contaId = contaId;
+
+
+    public Integer getContaIdRecebe() {
+        return contaIdRecebe;
     }
+
+
+
+    public void setContaIdRecebe(Integer contaIdRecebe) {
+        this.contaIdRecebe = contaIdRecebe;
+    }
+
+
 
     public double getValor() {
         return valor;
@@ -42,7 +63,8 @@ public class TransferenciaRequest {
     @Override
     public String toString() {
         return "TransferenciaRequest{" +
-                "contaId=" + contaId +
+                "saidaContaId=" + contaIdSaida +
+                ", recebeContaId=" + contaIdRecebe +
                 ", valor=" + valor +
                 '}';
     }

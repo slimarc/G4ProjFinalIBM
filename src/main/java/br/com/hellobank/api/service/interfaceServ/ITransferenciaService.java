@@ -7,7 +7,7 @@ import br.com.hellobank.api.model.request.TransferenciaRequest;
 
 public interface ITransferenciaService {
 
-	Transferencia create(TransferenciaRequest transferenciaRequest);
+	Transferencia transferencia(TransferenciaRequest transferenciaRequest);
 
-    List<Transferencia> findClienteTransferencia(Integer id);
+    List<Transferencia> getTransferencias(Integer id);
 }

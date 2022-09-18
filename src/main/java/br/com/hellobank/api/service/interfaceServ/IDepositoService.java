@@ -8,6 +8,5 @@ import br.com.hellobank.api.model.request.DepositoRequest;
 public interface IDepositoService {
 
     Deposito create(DepositoRequest depositoRequest);
-
     List<Deposito> findClienteDeposito(Integer id);
 }

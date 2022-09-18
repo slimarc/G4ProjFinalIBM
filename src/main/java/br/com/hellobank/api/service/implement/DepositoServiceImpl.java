@@ -21,13 +21,13 @@ public class DepositoServiceImpl implements IDepositoService {
 
     @Override
     public Deposito create(DepositoRequest depositoRequest) {
-        Deposito deposito = new Deposito(depositoRequest.getContaId(), depositoRequest.getValor());
-        return depositoDAO.save(deposito);
+        return depositoDAO.save(depositoRequest);
     }
 
     @Override
     public List<Deposito> findClienteDeposito(Integer id) {
-        return depositoDAO.getDepositoById_conta(id);
+        return depositoDAO.findClienteDepositos(id);
     }
 
+ 
 }

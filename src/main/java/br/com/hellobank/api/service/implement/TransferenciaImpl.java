@@ -1,5 +1,6 @@
 package br.com.hellobank.api.service.implement;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,13 +21,17 @@ public  class TransferenciaImpl implements ITransferenciaService {
     TransferenciaDAO transferenciaDAO;
 
     @Override
-    public Transferencia create(TransferenciaRequest transferenciaRequest) {
-    	Transferencia transferencia = new Transferencia(transferenciaRequest.getContaId(), transferenciaRequest.getValor());
-        return  transferenciaDAO.save(transferencia);
+    public Transferencia transferencia(TransferenciaRequest transferenciaRequest) {
+        return transferenciaDAO.save(new Transferencia(transferenciaRequest));
     }
 
     @Override
-    public List<Transferencia> findClienteTransferencia(Integer id) {
-        return transferenciaDAO.getTransferenciaById_conta(id);
+    public List<Transferencia> getTransferencias(Integer id) {
+        List<Transferencia> transferencia = new ArrayList<>();
+        transferencia = transferenciaDAO.getTransferenciaById_conta(id);
+        return transferencia;
     }
+
+ 
+    
 }

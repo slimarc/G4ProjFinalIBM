@@ -1,15 +1,23 @@
 package br.com.hellobank.api.model.response;
 
+import br.com.hellobank.api.model.enums.TipoTransferencia;
+
 public class TransferenciaResponse {
+    private String tipoTransferencia;
+    private Integer contaIdSaida;
+    private Integer contaIdRecebe;
     private double valor;
     private String data;
-    private String tipoTransferencia;
 
-    public TransferenciaResponse(double valor, String data, String tipoTransferencia) {
+  
+    public TransferenciaResponse(Integer contaIdSaida, Integer contaIdRecebe, double valor, String data, TipoTransferencia tipoTransferencia) {
+        this.tipoTransferencia = tipoTransferencia.name();
+        this.contaIdSaida = contaIdSaida;
+        this.contaIdRecebe = contaIdRecebe;
         this.valor = valor;
         this.data = data;
-        this.tipoTransferencia = tipoTransferencia;
     }
+  
 
     public double getValor() {
         return valor;
@@ -35,12 +43,35 @@ public class TransferenciaResponse {
         this.tipoTransferencia = tipoTransferencia;
     }
 
+    public Integer getContaIdSaida() {
+        return contaIdSaida;
+    }
+
+
+    public void setContaIdSaida(Integer contaIdSaida) {
+        this.contaIdSaida = contaIdSaida;
+    }
+
+
+    public Integer getContaIdRecebe() {
+        return contaIdRecebe;
+    }
+
+
+    public void setContaIdRecebe(Integer contaIdRecebe) {
+        this.contaIdRecebe = contaIdRecebe;
+    }
+    
     @Override
     public String toString() {
         return "TransferenciaResponse{" +
+                "tipoTransferencia='" + tipoTransferencia + '\'' +
+                ", contaIdSaida=" + contaIdSaida +
+                ", contaIdRecebe=" + contaIdRecebe +
                 ", valor=" + valor +
                 ", data=" + data +
-                ", tipoTransferencia='" + tipoTransferencia + '\'' +
                 '}';
     }
+
+  
 }
