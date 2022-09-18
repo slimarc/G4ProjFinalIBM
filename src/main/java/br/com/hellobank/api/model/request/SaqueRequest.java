@@ -8,26 +8,26 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class SaqueRequest {
 
-    @NotBlank(message = "O campo deve ser informado")
-    private Long contaId;
+    @NotBlank(message = "O campo deve ser informado!")
+    private Integer contaId;
 
-    @NotBlank(message = "O campo deve ser informado")
+    @NotBlank(message = "O campo deve ser informado!")
     @Min(1)
     private double valor;
 
     @JsonCreator(mode = JsonCreator.Mode.DEFAULT)
     public SaqueRequest(
-            @JsonProperty("contaId") Long contaId,
-            @JsonProperty("valor") double valor) {
+        @JsonProperty("contaId") @NotBlank(message = "O campo deve ser informado!") Integer contaId,
+        @JsonProperty("valor") double valor) {
         this.contaId = contaId;
         this.valor = valor;
     }
 
-    public Long getContaId() {
+    public @NotBlank(message = "O campo deve ser informado!") Integer getContaId() {
         return contaId;
     }
 
-    public void setContaId(Long contaId) {
+    public void setContaId(@NotBlank(message = "O campo deve ser informado!") Integer contaId) {
         this.contaId = contaId;
     }
 

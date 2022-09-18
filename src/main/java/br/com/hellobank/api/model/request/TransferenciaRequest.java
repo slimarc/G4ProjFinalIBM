@@ -8,27 +8,27 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class TransferenciaRequest {
 
-    @NotBlank(message = "Para qual conta vai ser transferido o dinheiro?")
-    private Long contaId;
+    @NotBlank(message = "Informe a conta de destino para a Transferência!")
+    private Integer contaId;
 
     
-    @NotBlank(message = "O campo deve ser informado")
+    @NotBlank(message = "O campo deve ser informado!")
     @Min(1)
     private double valor;
 
     @JsonCreator(mode = JsonCreator.Mode.DEFAULT)
     public TransferenciaRequest(
-            @JsonProperty("contaId") Long contaId,
-            @JsonProperty("valor") double valor) {
+        @JsonProperty("contaId") @NotBlank(message = "Informe a conta de destino para a Transferência!") Integer contaId,
+        @JsonProperty("valor") double valor) {
         this.contaId = contaId;
         this.valor = valor;
     }
 
-    public Long getContaId() {
+    public @NotBlank(message = "Informe a conta de destino para a Transferência!") Integer getContaId() {
         return contaId;
     }
 
-    public void setContaId(Long contaId) {
+    public void setContaId(@NotBlank(message = "Informe a conta de destino para a Transferência!") Integer contaId) {
         this.contaId = contaId;
     }
 

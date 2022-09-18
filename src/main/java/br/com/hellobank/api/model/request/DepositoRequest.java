@@ -9,26 +9,26 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class DepositoRequest {
 
     //NotBlank indica que os atibutos contaId e valor não podem estar em branco
-    @NotBlank(message = "O dinheiro vai ser depositado em qual conta?")
-    private Long contaId;
+    @NotBlank(message = "Informe a conta de destino para o Deposito!")
+    private Integer contaId;
 
-    @NotBlank(message = "O campo deve ser preenchido")
+    @NotBlank(message = "O campo deve ser preenchido!")
     @Min(1)
     private double valor;
 
     @JsonCreator(mode = JsonCreator.Mode.DEFAULT)
     public DepositoRequest(
-            @JsonProperty("contaId") Long contaId,
-            @JsonProperty("valor") double valor) {
+        @JsonProperty("contaId") @NotBlank(message = "O dinheiro vai ser depositado em qual conta?") Integer contaId,
+        @JsonProperty("valor") double valor) {
         this.contaId = contaId;
         this.valor = valor;
     }
 
-    public Long getContaId() {
+    public Integer getContaId() {
         return contaId;
     }
 
-    public void setContaId(Long contaId) {
+    public void setContaId(Integer contaId) {
         this.contaId = contaId;
     }
 
