@@ -37,7 +37,7 @@ public class SaqueResponse {
 
     @Override
     public String toString() {
-        return "CashoutResponse{" +
+        return "SaqueResponse{" +
                 ", valor=" + valor +
                 ", data=" + data +
                 ", tipoTransferencia='" + tipoTransferencia + '\'' +

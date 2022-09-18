@@ -37,10 +37,11 @@ public class DepositoResponse {
 
     @Override
     public String toString() {
-        return "CashoutResponse{" +
+        return "DepositoResponse{" +
                 ", valor=" + valor +
                 ", data=" + data +
                 ", tipoTransferencia='" + tipoTransferencia + '\'' +
                 '}';
     }
+    
 }

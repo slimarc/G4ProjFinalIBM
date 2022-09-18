@@ -7,12 +7,11 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 
-import br.com.hellobank.api.model.entity.Deposito;
+import br.com.hellobank.api.model.entidades.Deposito;
 
 @Repository
-public interface DepositoDAO extends JpaRepository<Deposito, Long> {
+public interface DepositoDAO extends JpaRepository<Deposito, Integer> {
 
-    @Query(value = "SELECT * FROM deposito WHERE conta_id = ?1", name =
-            "findDeposito", nativeQuery = true)
-    List<Deposito> getDepositoById_conta(Long contaId);
+    @Query(value = "SELECT * FROM deposito WHERE conta_id = ?1", name ="findDeposito", nativeQuery = true)
+    List<Deposito> getDepositoById_conta(Integer contaId);
 }

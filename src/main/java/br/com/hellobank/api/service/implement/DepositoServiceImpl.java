@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import br.com.hellobank.api.model.entity.Deposito;
+import br.com.hellobank.api.model.entidades.Deposito;
 import br.com.hellobank.api.model.request.DepositoRequest;
 import br.com.hellobank.api.dao.DepositoDAO;
 import br.com.hellobank.api.service.interfaceServ.IDepositoService;
@@ -26,7 +26,7 @@ public class DepositoServiceImpl implements IDepositoService {
     }
 
     @Override
-    public List<Deposito> findClienteDeposito(Long id) {
+    public List<Deposito> findClienteDeposito(Integer id) {
         return depositoDAO.getDepositoById_conta(id);
     }
 

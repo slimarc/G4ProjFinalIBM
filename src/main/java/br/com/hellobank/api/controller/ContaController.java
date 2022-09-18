@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-import br.com.hellobank.api.model.entity.Conta;
+import br.com.hellobank.api.model.entidades.Conta;
 import br.com.hellobank.api.service.interfaceServ.IContaService;
 
 @RestController

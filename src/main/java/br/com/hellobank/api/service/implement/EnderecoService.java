@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.com.hellobank.api.dao.EnderecoDAO;
-import br.com.hellobank.api.model.entity.Endereco;
+import br.com.hellobank.api.model.entidades.Endereco;
 import br.com.hellobank.api.service.interfaceServ.IEnderecoService;
 
 @Service

@@ -35,27 +35,44 @@ public class Transferencia {
 
 public class TransferenciaRequest {
 
+<<<<<<< HEAD
 	@NotBlank(message = "Para qual conta vai ser transferido o dinheiro?")
+=======
+    @NotBlank(message = "Informe a conta de destino para a Transferência!")
+>>>>>>> branch 'main' of https://github.com/Kyara-Cardozo/G4ProjFinalIBM.git
     private Integer contaId;
 
     
-    @NotBlank(message = "O campo deve ser informado")
+    @NotBlank(message = "O campo deve ser informado!")
     @Min(1)
     private double valor;
 
     @JsonCreator(mode = JsonCreator.Mode.DEFAULT)
     public TransferenciaRequest(
+<<<<<<< HEAD
             @JsonProperty("contaId") Integer contaId,
             @JsonProperty("valor") double valor) {
+=======
+        @JsonProperty("contaId") @NotBlank(message = "Informe a conta de destino para a Transferência!") Integer contaId,
+        @JsonProperty("valor") double valor) {
+>>>>>>> branch 'main' of https://github.com/Kyara-Cardozo/G4ProjFinalIBM.git
         this.contaId = contaId;
         this.valor = valor;
     }
 
+<<<<<<< HEAD
     public Integer getContaId() {
+=======
+    public @NotBlank(message = "Informe a conta de destino para a Transferência!") Integer getContaId() {
+>>>>>>> branch 'main' of https://github.com/Kyara-Cardozo/G4ProjFinalIBM.git
         return contaId;
     }
 
+<<<<<<< HEAD
     public void setContaId(Integer contaId) {
+=======
+    public void setContaId(@NotBlank(message = "Informe a conta de destino para a Transferência!") Integer contaId) {
+>>>>>>> branch 'main' of https://github.com/Kyara-Cardozo/G4ProjFinalIBM.git
         this.contaId = contaId;
     }
 

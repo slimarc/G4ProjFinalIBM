@@ -37,7 +37,7 @@ public class TransferenciaResponse {
 
     @Override
     public String toString() {
-        return "CashoutResponse{" +
+        return "TransferenciaResponse{" +
                 ", valor=" + valor +
                 ", data=" + data +
                 ", tipoTransferencia='" + tipoTransferencia + '\'' +

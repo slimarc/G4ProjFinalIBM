@@ -2,7 +2,7 @@ package br.com.hellobank.api.service.interfaceServ;
 
 import java.util.ArrayList;
 
-import br.com.hellobank.api.model.entity.Endereco;
+import br.com.hellobank.api.model.entidades.Endereco;
 
 public interface IEnderecoService {
     

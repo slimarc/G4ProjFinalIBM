@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import br.com.hellobank.api.model.entity.Transferencia;
+import br.com.hellobank.api.model.entidades.Transferencia;
 import br.com.hellobank.api.model.request.SaqueRequest;
 import br.com.hellobank.api.model.request.DepositoRequest;
 import br.com.hellobank.api.model.request.TransferenciaRequest;
@@ -19,7 +19,6 @@ import br.com.hellobank.api.model.response.SaqueResponse;
 import br.com.hellobank.api.model.response.DepositoResponse;
 import br.com.hellobank.api.model.response.TransferenciaResponse;
 import br.com.hellobank.api.service.interfaceServ.IOperacaoService;
-import br.com.hellobank.api.service.interfaceServ.OperacaoService;
 
 @RestController
 @RequestMapping(path = "/operacao")
@@ -30,7 +29,7 @@ public class OperacaoController {
 
     @GetMapping(value = "/saldo/{contaId}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<String> balance(@PathVariable("contaId") Integer contaId) {
-        String saldo = operacaoService.getSaldo(Long.valueOf(contaId));
+        String saldo = operacaoService.getSaldo(Integer.valueOf(contaId));
         return new ResponseEntity<>(saldo, HttpStatus.OK);
     }
 
@@ -54,7 +53,7 @@ public class OperacaoController {
 
     @GetMapping( value = "/contaTransacoes/{contaId}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity contaTransacoes(@PathVariable("contaId") Integer contaId) {
-        List<Transferencia> transferencias = operacaoService.getTransferencias(Long.valueOf(contaId));
+        List<Transferencia> transferencias = operacaoService.getTransferencias(Integer.valueOf(contaId));
         return new ResponseEntity<>(transferencias, HttpStatus.OK);
     }
 }
