@@ -1,25 +1,28 @@
-package br.com.hellobank.api.model.entity;
+package br.com.hellobank.api.model.entidades;
 
 import br.com.hellobank.api.model.enums.TipoTransferencia;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
+//A anotação JsonInclude(JsonInclude.Include.NON_NULL) indica que a entidade Transacao
+//será omitida caso seus atributos (tipoTransacao, valor, data, contaIdSaida e contaIdRecebe)
+//sejam nulos.
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Transacao {
 
     private String tipoTransacao;
     private double valor;
     private String data;
-    private Long contaIdSaida;
-    private Long contaIdRecebe;
+    private Integer contaIdSaida;
+    private Integer contaIdRecebe;
 
-    public Transacao(Long contaIdSaida, String data, double valor, TipoTransferencia tipo) {
+    public Transacao(Integer contaIdSaida, String data, double valor, TipoTransferencia tipo) {
         this.contaIdSaida = contaIdSaida;
         this.data = data;
         this.valor = valor;
         this.tipoTransacao = tipo.name();
     }
 
-    public Transacao(TipoTransferencia tipo, Long contaIdRecebe, String data, double valor) {
+    public Transacao(TipoTransferencia tipo, Integer contaIdRecebe, String data, double valor) {
         this.contaIdRecebe = contaIdRecebe;
         this.data = data;
         this.valor = valor;
@@ -27,25 +30,25 @@ public class Transacao {
     }
 
     public Transacao(String data, double valor, TipoTransferencia tipo) {
-        this.contaIdSaida = contaIdSaida;
+        //this.contaIdSaida = contaIdSaida;
         this.data = data;
         this.valor = valor;
         this.tipoTransacao = tipo.name();
     }
 
-    public Long getContaIdSaida() {
+    public Integer getContaIdSaida() {
         return contaIdSaida;
     }
 
-    public void setContaIdSaida(Long contaIdSaida) {
+    public void setContaIdSaida(Integer contaIdSaida) {
         this.contaIdSaida = contaIdSaida;
     }
 
-    public Long getContaIdRecebe() {
+    public Integer getContaIdRecebe() {
         return contaIdRecebe;
     }
 
-    public void setContaIdRecebe(Long contaIdRecebe) {
+    public void setContaIdRecebe(Integer contaIdRecebe) {
         this.contaIdRecebe = contaIdRecebe;
     }
 

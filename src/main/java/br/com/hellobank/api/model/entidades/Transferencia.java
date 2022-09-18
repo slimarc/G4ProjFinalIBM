@@ -1,4 +1,4 @@
-package br.com.hellobank.api.model.entity;
+package br.com.hellobank.api.model.entidades;
 
 import java.time.LocalDateTime;
 import javax.persistence.Entity;
@@ -10,38 +10,38 @@ import javax.persistence.Table;
 import br.com.hellobank.api.util.DateHour;
 
 @Entity
-@Table(name = "deposito")
-public class Deposito {
+@Table(name = "transferencia")
+public class Transferencia {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
-    private Long contaId;
+    private Integer contaId;
     private double valor;
     private LocalDateTime data;
 
-    public Deposito(){}
+    public Transferencia(){}
 
-    public Deposito(Long contaId, double valor) {
+    public Transferencia(Integer contaId, double valor) {
         this.contaId = contaId;
         this.valor = valor;
         this.data = LocalDateTime.now();
     }
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    public Long getContaId() {
+    public Integer getContaId() {
         return contaId;
     }
 
-    public void setContaId(Long contaId) {
+    public void setContaId(Integer contaId) {
         this.contaId = contaId;
     }
 
@@ -63,6 +63,6 @@ public class Deposito {
 
     @Override
     public String toString() {
-        return "Deposito{" +"id=" + id +", contaId=" + contaId +", valor=" + valor +", data=" + data +'}';
+        return "Transferencia{" +"id=" + id +", contaId=" + contaId +", valor=" + valor +", data=" + data +'}';
     }
 }

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class DepositoRequest {
 
+    //NotBlank indica que os atibutos contaId e valor não podem estar em branco
     @NotBlank(message = "O dinheiro vai ser depositado em qual conta?")
     private Long contaId;
 

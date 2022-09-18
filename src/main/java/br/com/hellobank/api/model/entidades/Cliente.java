@@ -1,4 +1,4 @@
-package br.com.hellobank.api.model.entity;
+package br.com.hellobank.api.model.entidades;
 
 import java.time.LocalDate;
 import java.util.List;

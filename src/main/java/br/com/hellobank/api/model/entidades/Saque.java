@@ -1,4 +1,4 @@
-package br.com.hellobank.api.model.entity;
+package br.com.hellobank.api.model.entidades;
 
 import java.time.LocalDateTime;
 import javax.persistence.Entity;
@@ -15,33 +15,33 @@ public class Saque {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
-    private Long contaId;
+    private Integer contaId;
     private double valor;
     private LocalDateTime data;
 
     public Saque(){}
 
-    public Saque(Long contaId, double valor) {
+    public Saque(Integer contaId, double valor) {
         this.contaId = contaId;
         this.valor = valor;
         this.data = LocalDateTime.now();
     }
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    public Long getContaId() {
+    public Integer getContaId() {
         return contaId;
     }
 
-    public void setContaId(Long contaId) {
+    public void setContaId(Integer contaId) {
         this.contaId = contaId;
     }
 
