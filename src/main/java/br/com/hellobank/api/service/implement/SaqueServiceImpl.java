@@ -7,26 +7,26 @@ import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import br.com.hellobank.api.model.entidades.Saque;
-import br.com.hellobank.api.model.request.SaqueRequest;
 import br.com.hellobank.api.dao.SaqueDAO;
-import br.com.hellobank.api.service.interfaceServ.ISaqueService;
+import br.com.hellobank.api.models.entidades.Saque;
+import br.com.hellobank.api.models.request.SaqueRequest;
+import br.com.hellobank.api.service.interfacesServices.SaqueService;
 
 @Component
 @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
-public class SaqueServiceImpl implements ISaqueService {
+public class SaqueServiceImpl implements SaqueService {
 
     @Autowired
-    SaqueDAO saqueDAO;
+    SaqueDAO saqueRepository;
 
     @Override
     public Saque create(SaqueRequest saqueRequest) {
         Saque saque = new Saque(saqueRequest.getContaId(), saqueRequest.getValor());
-        return saqueDAO.save(saque);
+        return saqueRepository.save(saque);
     }
 
     @Override
-    public List<Saque> findClienteSaques(Integer id) {
-        return saqueDAO.getSaqueById_conta(id);
+    public List<Saque> findClienteSaques(Long id) {
+        return saqueRepository.getSaqueById_conta(id);
     }
 }

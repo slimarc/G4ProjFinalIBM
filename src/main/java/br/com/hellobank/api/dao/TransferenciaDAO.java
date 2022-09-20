@@ -6,12 +6,12 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-
-import br.com.hellobank.api.model.entidades.Transferencia;
+import br.com.hellobank.api.models.entidades.Transferencia;
 
 @Repository
-public interface TransferenciaDAO extends JpaRepository<Transferencia, Integer> {
+public interface TransferenciaDAO extends JpaRepository<Transferencia, Long> {
 
-    @Query(value = "SELECT * FROM transferencia WHERE conta_id = ?1", name ="findTransferencia", nativeQuery = true)
-    List<Transferencia> getTransferenciaById_conta(Integer contaId);
+    @Query(value = "SELECT * FROM transferencia WHERE conta_id_recebe = ?1 OR conta_id_saida = ?1", name =
+            "findTransacoes", nativeQuery = true)
+    List<Transferencia> findByTransacaoPeloId(Long id);
 }
