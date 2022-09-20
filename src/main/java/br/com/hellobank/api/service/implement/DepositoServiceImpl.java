@@ -7,27 +7,24 @@ import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import br.com.hellobank.api.model.entidades.Deposito;
-import br.com.hellobank.api.model.request.DepositoRequest;
 import br.com.hellobank.api.dao.DepositoDAO;
-import br.com.hellobank.api.service.interfaceServ.IDepositoService;
+import br.com.hellobank.api.models.entidades.Deposito;
+import br.com.hellobank.api.service.interfacesServices.DepositoService;
 
 @Component
 @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
-public class DepositoServiceImpl implements IDepositoService {
+public class DepositoServiceImpl implements DepositoService {
 
     @Autowired
-    DepositoDAO depositoDAO;
+    DepositoDAO depositoRepository;
 
     @Override
-    public Deposito create(DepositoRequest depositoRequest) {
-        return depositoDAO.save(depositoRequest);
+    public Deposito create(Deposito novoDeposito) {
+        return depositoRepository.save(novoDeposito);
     }
 
     @Override
-    public List<Deposito> findClienteDeposito(Integer id) {
-        return depositoDAO.findClienteDepositos(id);
+    public List<Deposito> findClienteDepositos(Long id) {
+        return depositoRepository.findClienteDepositos(id);
     }
-
- 
 }
