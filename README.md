@@ -1,6 +1,6 @@
-<h3 align="center">
+<h2 align="center">
     Desafio Final - Programa If Black Then Code - Gama Academy & IBM
-</h3>
+</h2>
 <p align="center">
 <img src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge"/>
 </p>
