@@ -14,7 +14,47 @@
 
 <p align="center"> Plataforma de gerenciamento de transações bancárias. </p>
     
+## 👨🏻‍💻 Sobre o projeto
 
+<p> A proposta deste desafio final é a criação de uma aplicação que realiza transações bancárias. Dessa forma devemos fazer cadastro de novos clientes e de seus dados pessoais e de contato, atrelar ao cadastro do cliente uma conta bancária e registrar todas as transações realizadas entre contas deste sistema.</p>
+
+## Metodologias Ágeis
+
+<p> Como método de organização utilizamos o método Kanban através de um quadro no Trello, onde foi feito o backlog das tarefas principais, aplicação de padrão TO DO, DOING e DONE, e ainda definição de datas de entrega, checklists e tags de prioridade.
+
+- [Trello](https://trello.com/invite/b/8Iur712m/2e336a9794f586b869820f1fe37ac065/proj-final-ibm-grupo-04)
+
+</p>
+
+## Back-end
+
+<p>Nosso back-end é formado por um banco de dados para o armazenamento de cadastro de clientes e seus respectivos dados pessoais e de conta bancária, 
+e uma API para cadastro, atualização, listagem e exclusão de clientes e/ou contas, bem como armazenamento do histórico de transações entre contas e extrato de conta. </p>
+
+### 🚀 Tecnologias
+
+- [JAVA](https://www.java.com)
+- [Spring Boot](https://spring.io/projects/spring-boot)
+- [MySQL](https://www.mysql.com/)
+
+
+### ⚙️ Funcionalidades
+- Criação de conta bancária;
+- Operações de depósito, saque e transferência entre contas;
+- Resumo de transações entre contas bancárias;
+- Extrato da conta;
+
+## Deploy
+
+<p>Nosso deploy foi feito localmente utilizando</p>
+
+### 🚀 Tecnologias
+
+- [Jenkins](https://www.jenkins.io/)
+- [Docker](https://hub.docker.com/)
+
+### ⚙️ Funcionalidades
+- 
 
 <h2>🏆 DevTeam: </h2>
 
