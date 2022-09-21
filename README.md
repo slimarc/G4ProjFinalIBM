@@ -38,6 +38,7 @@
   <img src="https://img.shields.io/badge/-Linkedin-1C1C1C?style=for-the-badge&logo=Linkedin&logoColor=00FFFF&link=https://www.linkedin.com/in/slimarc/" style= "width:90px;"/>
   </a>
 
+   
   <td align="center"><img style="width: 70%; border-radius: 50%" 
   src="https://avatars.githubusercontent.com/u/69278952?v=4"
   alt="Kyara Cardozo"/><br /><sub><b>Kyara Cardozo</b></sub></a><br />
@@ -46,15 +47,6 @@
   <img src="https://img.shields.io/badge/-Linkedin-1C1C1C?style=for-the-badge&logo=Linkedin&logoColor=00FFFF&link=https://www.linkedin.com/in/kyara-cardozo/" style= "width:90px;"/>
   </a>
  
-  
-  <td align="center"><img style="width: 70%; border-radius: 50%" 
-  src="https://avatars.githubusercontent.com/u/89229866?v=4"
-  alt="Matheus Gandur"/><br /><sub><b>Matheus Gandur</b></sub></a><br />
-  <a href="https://www.linkedin.com/in/matheus-gandur-8a2194163/" alt="Linkedin">
-  <br>
-  <img src="https://img.shields.io/badge/-Linkedin-1C1C1C?style=for-the-badge&logo=Linkedin&logoColor=00FFFF&link=https://www.linkedin.com/in/matheus-gandur-8a2194163/" style= "width:90px;"/>
-  </a>
-  
   <td align="center"><img style="width: 70%; border-radius: 50%" 
   src="https://avatars.githubusercontent.com/u/109994910?v=4"
   alt="Lucas Gomes"/><br /><sub><b>Lucas Gomes</b></sub></a><br />
