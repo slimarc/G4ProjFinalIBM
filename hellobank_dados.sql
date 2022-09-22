@@ -109,19 +109,19 @@ COLLATE = utf8mb4_0900_ai_ci;
 select * from `hellobank`.`cliente`;
 
 insert into `hellobank`.`cliente` (id,conta_id, cpf, data_criacao, email, nome, rg, telefone)
-values (null, 26, "37502927875","2021-06-18 11:34:33", "lucasaraujo@gmail.com","Lucas Araujo Gomes","129629947","(11) 84840-8957");
+values (null, 26, "375.029.278-75","2021-06-18 11:34:33", "lucasaraujo@gmail.com","Lucas Araujo Gomes","12.962.994-7","(11) 84840-8957");
 
 insert into `hellobank`.`cliente` (id,conta_id, cpf, data_criacao, email, nome, rg, telefone)
-values (null, 30, "32771723093","2021-01-04 21:03:39", "kyaracardz@hotmail.com","Kyara Cardozo","143783993","(21) 97731-0648");
+values (null, 30, "327.717.230-93","2021-01-04 21:03:39", "kyaracardz@hotmail.com","Kyara Cardozo","14.378.399-3","(21) 97731-0648");
 
 insert into `hellobank`.`cliente` (id,conta_id, cpf, data_criacao, email, nome, rg, telefone)
-values (null, 27, "35525430070","2013-09-02 10:53:59", "ricardosantos@yahoo.com","Ricardo Santos","326994026","(84) 94693-2946");
+values (null, 27, "355.254.300-70","2013-09-02 10:53:59", "ricardosantos@yahoo.com","Ricardo Santos","32.699.402-6","(84) 94693-2946");
 
 insert into `hellobank`.`cliente` (id,conta_id, cpf, data_criacao, email, nome, rg, telefone)
-values (null, 29, "83591157023","1993-11-30 16:23:43", "maryjane@outlook.com","Maryjane Ifunanya","466011337","(62) 98527-9773");
+values (null, 29, "835.911.570-23","1993-11-30 16:23:43", "maryjane@outlook.com","Maryjane Ifunanya","46.601.133-7","(62) 98527-9773");
 
 insert into `hellobank`.`cliente` (id,conta_id, cpf, data_criacao, email, nome, rg, telefone)
-values (null, 28, "11945000058","1999-12-01 06:00:00", "cassiaroberta@gmail.com","Cassia Roberta","342806373","(88) 98933-2867");
+values (null, 28, "119.450.000-58","1999-12-01 06:00:00", "cassiaroberta@gmail.com","Cassia Roberta","34.280.637-3","(88) 98933-2867");
 
 -- -----------------------------------------------------
 -- Table `hellobank`.`deposito`
@@ -175,19 +175,19 @@ COLLATE = utf8mb4_0900_ai_ci;
 
 select * from `hellobank`.`endereco`;
 
-insert into `hellobank`.`endereco` (id_endereco, bairro, cep, cidade, logradouro, numero, cliente_idcliente)
+insert into `hellobank`.`endereco` (id_endereco, bairro, cep, cidade, logradouro, numero, uf, cliente_idcliente)
 values (null, "Vila Maresia", "0135156","Ilha bela", "Rua dos laranjais", "322", 30);
 
-insert into `hellobank`.`endereco` (id_endereco, bairro, cep, cidade, logradouro, numero, cliente_idcliente)
+insert into `hellobank`.`endereco` (id_endereco, bairro, cep, cidade, logradouro, numero, uf, cliente_idcliente)
 values (null, "Vila Mariana", "09934123","São Paulo", "Rua Felipe Melo", "45A", 27);
 
-insert into `hellobank`.`endereco` (id_endereco, bairro, cep, cidade, logradouro, numero, cliente_idcliente)
+insert into `hellobank`.`endereco` (id_endereco, bairro, cep, cidade, logradouro, numero, uf, cliente_idcliente)
 values (null, "Centro", "24420880","Niterói", "Avenida do Bom Senhor", "880", 29);
 
-insert into `hellobank`.`endereco` (id_endereco, bairro, cep, cidade, logradouro, numero, cliente_idcliente)
+insert into `hellobank`.`endereco` (id_endereco, bairro, cep, cidade, logradouro, numero, uf, cliente_idcliente)
 values (null, "Jardim das nações", "33011020","Diadema", "Rua México", "144", 26);
 
-insert into `hellobank`.`endereco` (id_endereco, bairro, cep, cidade, logradouro, numero, cliente_idcliente)
+insert into `hellobank`.`endereco` (id_endereco, bairro, cep, cidade, logradouro, numero, uf, cliente_idcliente)
 values (null, "Jardim da Paz", "09910580","Rio Branco", "Avenida Tiradentes", "81", 28);
 
 
