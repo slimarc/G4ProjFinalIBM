@@ -117,118 +117,118 @@ git clone https://github.com/cassialeaal/G4ProjFinalIBM
 1. Clientes
     
     1.1 Incluir Cliente (POST)
-    ```sh
-      localhost:8080/cliente/create
-     
-     {
-    "nome": "Teste new", 
-    "cpf": "994.513.560-02",
-    "rg":"30.315.318-0",
-    "telefone":"(71)98222-2222",
-    "email":"testenew@gmail.com"
-    }
-     ```
+  
+          localhost:8080/cliente/create
+
+             {
+                "nome": "Teste new", 
+                "cpf": "994.513.560-02",
+                "rg":"30.315.318-0",
+                "telefone":"(71)98222-2222",
+                "email":"testenew@gmail.com"
+            }
+  
     1.2 Listar Cliente pelo ID (GET)
-      ```sh
-     localhost:8080/cliente/lista
-      ```
-     1.3 Excluir Cliente (DELETE)
-      ```sh
-     localhost:8080/cliente/{clienteId}
-      ```
-      1.4 Listar Cliente pelo ID (GET)
-      ```sh
-     localhost:8080/cliente/{contaId}
-      ```
-      1.5 Alterar Cliente (PUT)
-      ```sh
-     localhost:8080/cliente/update/{contaId}
-     
-     {
-    "nome": "Ricardo Lima", 
-    "cpf": "983.101.240-23",
-    "rg":"32.187.806-1",
-    "telefone":"(71)98000-0000",
-    "email":"ricardoteste@gmail.com"
-    }
-      ```
+
+        localhost:8080/cliente/lista
+          
+    1.3 Excluir Cliente (DELETE)
+   
+        localhost:8080/cliente/{clienteId}
+    
+    1.4 Listar Cliente pelo ID (GET)
+
+    localhost:8080/cliente/{contaId}
+
+    1.5 Alterar Cliente (PUT)
+
+        localhost:8080/cliente/update/{contaId}
+
+            {
+                "nome": "Ricardo Lima", 
+                "cpf": "983.101.240-23",
+                "rg":"32.187.806-1",
+                "telefone":"(71)98000-0000",
+                "email":"ricardoteste@gmail.com"
+            }
+          
       
  2. Operações Bancárias
  
     2.1 Listar Saldo da Conta (GET)
-    ```sh
-      localhost:8080/operacao/saldo/{contaId}
-     ```
+    
+          localhost:8080/operacao/saldo/{contaId}
+         
     2.2 Despósito (POST)
-    ```sh
-     localhost:8080/operacao/deposito
-     
-     {
-    "contaId": 2,
-    "valor": 800
-    }
-     ```
+        
+         localhost:8080/operacao/deposito
+
+             {
+                "contaId": 2,
+                "valor": 800
+            }
+   
      2.3 Listar Trasanções da Conta (GET)
-    ```sh
-     localhost:8080/operacao/contaTransacoes/{contaId}
-     ```
-      2.4 Nova Transferência (POST)
-    ```sh
-     localhost:8080/operacao/transferencia}
+  
+        localhost:8080/operacao/contaTransacoes/{contaId}
+
+    2.4 Nova Transferência (POST)
+ 
+         localhost:8080/operacao/transferencia}
+
+             {
+                "saidaContaId": 2, 
+                "recebeContaId": 5, 
+                "valor": 350.00
+            }
      
-     {
-    "saidaContaId": 2, 
-    "recebeContaId": 5, 
-    "valor": 350.00
-    }
-     ```
       2.5 Novo Saque (POST)
-    ```sh
-     localhost:8080/operacao/saque
-     
-     {
-    "contaId": 5,
-     "valor": 50
-    }
-     ```
+        sh
+         localhost:8080/operacao/saque
+
+             {
+                "contaId": 5,
+                 "valor": 50
+            }
+
      
     3.Endereço
  
     3.1 Criando o Endereço (POST)
-    ```sh
-      localhost:8080/enderecos/create
-      
-      {   
-    "logradouro":"Logradouro teste",
-    "numero":"74C",
-    "bairro":"Bairo teste",
-    "cidade":"Recife",
-    "uf":"PE",
-    "cep":"00000-000",
-    "cliente": {
-       "id": 2
-    }
-    }
-     ```
+
+          localhost:8080/enderecos/create
+
+              {   
+                "logradouro":"Logradouro teste",
+                "numero":"74C",
+                "bairro":"Bairo teste",
+                "cidade":"Recife",
+                "uf":"PE",
+                "cep":"00000-000",
+                "cliente": {
+                   "id": 2
+                }
+            }
+     
     3.2 Excluir Endereço (DELETE)
-    ```sh
+    
       localhost:8080/enderecos/delete/{enderecoId}
-     ```
+     
      3.3 Alterando o  Endereço (PUT)
-    ```sh
-      localhost:8080/enderecos/update/{enderecoId}
-      
-      {
-        "idEndereco": 18,
-        "logradouro": "rua teste 1887",
-        "numero": "31E",
-        "bairro": "Bairro teste",
-        "cidade": "Cidade teste",
-        "uf": "PE",
-        "cep": "00000-000",
-        "cliente": {
-            "id": 5
-    }
-    }
-     ```
+   
+          localhost:8080/enderecos/update/{enderecoId}
+
+              {
+                "idEndereco": 18,
+                "logradouro": "rua teste 1887",
+                "numero": "31E",
+                "bairro": "Bairro teste",
+                "cidade": "Cidade teste",
+                "uf": "PE",
+                "cep": "00000-000",
+                "cliente": {
+                    "id": 5
+            }
+        }
+     
     
