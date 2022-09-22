@@ -98,16 +98,13 @@ e uma API para cadastro, atualização, listagem e exclusão de clientes e/ou co
 
 ## Deploy
 
-<p>Nosso deploy foi feito localmente utilizando</p>
+<p>Nosso deploy foi feito localmente.</p>
 
 ### 🚀 Tecnologias
 
 - [Jenkins](https://www.jenkins.io/)
 - [Docker](https://hub.docker.com/)
 
-### ⚙️ Funcionalidades
--  
-   
 ## Como executar?
 
 ### Clonar o repositório:
