@@ -110,129 +110,161 @@ e uma API para cadastro, atualização, listagem e exclusão de clientes e/ou co
    
 ## Como executar?
 
-1. Clonar o repositório:
-```sh
-git clone https://github.com/cassialeaal/G4ProjFinalIBM
-```
+### Clonar o repositório:
+ <p>Para executar o projeto, basta realizar o clone do repositório utilizando o comando:
+    
+    git clone https://github.com/cassialeaal/G4ProjFinalIBM
+</p>
+
 ## Endpoints
 
-1. Clientes
-    
-    1.1 Incluir Cliente (POST)
-  
-          localhost:8080/cliente/create
+<p> Para acessar a página de documentação dos endpoints com mais detalhes, <a href="https://documenter.getpostman.com/view/22864114/2s7ZE2r5DL" target="_blank"> clique aqui </a>.
+</p>
 
-             {
-                "nome": "Teste new", 
-                "cpf": "994.513.560-02",
-                "rg":"30.315.318-0",
-                "telefone":"(71)98222-2222",
-                "email":"testenew@gmail.com"
-            }
-  
-    1.2 Listar Cliente pelo ID (GET)
-
-        localhost:8080/cliente/lista
-          
-    1.3 Excluir Cliente (DELETE)
-   
-        localhost:8080/cliente/{clienteId}
+## Clientes
     
-    1.4 Listar Cliente pelo ID (GET)
+<p> Cadastrar Cliente (POST)
+  
+    localhost:8080/cliente/create
+    
+O modelo Json para este método é:
+
+    {
+        "nome": "Teste new", 
+        "cpf": "994.513.560-02",
+        "rg":"30.315.318-0",
+        "telefone":"(71)98222-2222",
+        "email":"testenew@gmail.com"
+    }
+  
+Listar Cliente (GET)
+
+    localhost:8080/cliente/lista
+    
+Listar Cliente pelo ID (GET)
 
     localhost:8080/cliente/{contaId}
+          
+Excluir Cliente (DELETE)
+   
+    localhost:8080/cliente/{clienteId}
+    
 
-    1.5 Alterar Cliente (PUT)
+Alterar Cliente (PUT)
 
-        localhost:8080/cliente/update/{contaId}
+    localhost:8080/cliente/update/{contaId}
 
-            {
-                "nome": "Ricardo Lima", 
-                "cpf": "983.101.240-23",
-                "rg":"32.187.806-1",
-                "telefone":"(71)98000-0000",
-                "email":"ricardoteste@gmail.com"
-            }
+O modelo Json para este método é:
+
+    {
+        "nome": "Ricardo Lima", 
+        "cpf": "983.101.240-23",
+        "rg":"32.187.806-1",
+        "telefone":"(71)98000-0000",
+        "email":"ricardoteste@gmail.com"
+    }
           
       
- 2. Operações Bancárias
- 
-    2.1 Listar Saldo da Conta (GET)
-    
-          localhost:8080/operacao/saldo/{contaId}
-         
-    2.2 Despósito (POST)
+## Operações Bancárias
+
+Despósito (POST)
         
-         localhost:8080/operacao/deposito
-
-             {
-                "contaId": 2,
-                "valor": 800
-            }
-   
-     2.3 Listar Trasanções da Conta (GET)
-  
-        localhost:8080/operacao/contaTransacoes/{contaId}
-
-    2.4 Nova Transferência (POST)
+    localhost:8080/operacao/deposito
  
-         localhost:8080/operacao/transferencia}
+O modelo Json para este método é:
 
-             {
-                "saidaContaId": 2, 
-                "recebeContaId": 5, 
-                "valor": 350.00
-            }
-     
-      2.5 Novo Saque (POST)
-        sh
-         localhost:8080/operacao/saque
+    {
+        "contaId": 2,
+        "valor": 800
+    }
 
-             {
-                "contaId": 5,
-                 "valor": 50
-            }
-
-     
-    3.Endereço
+Nova Transferência (POST)
  
-    3.1 Criando o Endereço (POST)
+    localhost:8080/operacao/transferencia}
 
-          localhost:8080/enderecos/create
+O modelo Json para este método é:
 
-              {   
-                "logradouro":"Logradouro teste",
-                "numero":"74C",
-                "bairro":"Bairo teste",
-                "cidade":"Recife",
-                "uf":"PE",
-                "cep":"00000-000",
-                "cliente": {
-                   "id": 2
-                }
-            }
-     
-    3.2 Excluir Endereço (DELETE)
+    {
+        "saidaContaId": 2, 
+        "recebeContaId": 5, 
+        "valor": 350.00
+    }
     
-      localhost:8080/enderecos/delete/{enderecoId}
-     
-     3.3 Alterando o  Endereço (PUT)
-   
-          localhost:8080/enderecos/update/{enderecoId}
+Novo Saque (POST)
 
-              {
-                "idEndereco": 18,
-                "logradouro": "rua teste 1887",
-                "numero": "31E",
-                "bairro": "Bairro teste",
-                "cidade": "Cidade teste",
-                "uf": "PE",
-                "cep": "00000-000",
-                "cliente": {
-                    "id": 5
-            }
-        }
+    localhost:8080/operacao/saque
+
+O modelo Json para este método é:
+
+    {
+        "contaId": 5,
+        "valor": 50
+    }
+    
+Listar Saldo da Conta (GET)
+    
+    localhost:8080/operacao/saldo/{contaId}
+         
    
+Listar Trasanções entre Contas (GET)
+  
+    localhost:8080/operacao/contaTransacoes/{contaId}
+
+
+## Endereço
+ 
+Cadastrar Endereço (POST)
+
+    localhost:8080/enderecos/create
+
+O modelo Json para este método é:
+
+    {   
+        "logradouro":"Logradouro teste",
+        "numero":"74C",
+        "bairro":"Bairo teste",
+        "cidade":"Recife",
+        "uf":"PE",
+        "cep":"00000-000",
+        "cliente": {
+        "id": 2
+        }
+    }
+
+Listar Endereços (GET)
+
+    localhost:8080/enderecos
+    
+    
+Listar Endereços por CEP (GET)
+
+    localhost:8080/enderecos/{cep}
+
+Alterando o  Endereço (PUT)
+   
+    localhost:8080/enderecos/update/{enderecoId}
+
+O modelo Json para este método é:
+
+    {
+        "idEndereco": 18,
+        "logradouro": "rua teste 1887",
+        "numero": "31E",
+        "bairro": "Bairro teste",
+        "uf": "PE",
+        "cep": "00000-000",
+        "cliente": {
+        "id": 5
+        }
+    }
+        
+Excluir Endereço (DELETE)
+    
+    localhost:8080/enderecos/delete/{enderecoId}
+    
+    
+ </p>
+ <br>
  <h2>🎁 Agradecimentos </h2>
   <h4>Os Panteras Negras gostariam de agradeçer profundamente à IBM pela oportunidade gigante de fazermos parte deste lindo programa de treinamento, o If Black, Then Code. E que deu chance para nós, estudantes pretos(as) e pardos(as), de ampliarmos nossas habilidades, hard skills e soft skills, e assim nos qualificarmos na área de desenvolvimento Back End e DevOps (Java).
       Agradeçemos também à Gama Academy e seus Yellow Belts pelo apoio e atenção ao longo dessas 8 semanas de treinamento, e aos professores Isidro em suas espetaculares aulas assíncronas, Ricardo Alexandre Bontempo em suas suuuuper monitorias, e ao professor Danilo Aparecido pelas aulas incríveis de DevOps e suas dicas essenciais de mercado de trabalho. Todos foram incríveis!
