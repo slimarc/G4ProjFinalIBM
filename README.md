@@ -118,11 +118,60 @@ git clone https://github.com/cassialeaal/G4ProjFinalIBM
     
     1.1 Incluir Cliente 
     ```sh
-      public ResponseEntity<Cliente> cadastrarNovo(@RequestBody Cliente novo){
-          Cliente cliente = service.cadastrarNovo(novo);
-          if(cliente != null){
-               return ResponseEntity.ok(cliente);
-          }
-          return ResponseEntity.badRequest().build();
-     }
+      localhost:8080/cliente/create
      ```
+    1.2 Listar Cliente pelo ID
+      ```sh
+     localhost:8080/cliente/lista
+      ```
+     1.3 Excluir Cliente
+      ```sh
+     localhost:8080/cliente/{clienteId}
+      ```
+      1.4 Listar Cliente pelo ID 
+      ```sh
+     localhost:8080/cliente/{contaId}
+      ```
+      1.5 Alterar Cliente
+      ```sh
+     localhost:8080/cliente/update/{contaId}
+      ```
+      
+ 2. Operações Bancárias
+ 
+    2.1 Listar Saldo da Conta
+    ```sh
+      localhost:8080/operacao/saldo/{contaId}
+     ```
+    2.2 Despósito
+    ```sh
+     localhost:8080/operacao/deposito
+     ```
+     2.3 Listar Trasanções da Conta
+    ```sh
+     localhost:8080/operacao/contaTransacoes/{contaId}
+     ```
+      2.4 Nova Transação 
+    ```sh
+     localhost:8080/operacao/transferencia}
+     ```
+      2.5 Novo Saque 
+    ```sh
+     localhost:8080/operacao/saque
+     ```
+     
+    3.Endereço
+ 
+    3.1 Criando o Endereço
+    ```sh
+      localhost:8080/enderecos/create
+     ```
+    3.2 Excluir Endereço
+    ```sh
+      localhost:8080/enderecos/delete/{enderecoId}
+     ```
+     3.3 Alterando o  Endereço
+    ```sh
+      localhost:8080/enderecos/update/{enderecoId}
+     ```
+    
