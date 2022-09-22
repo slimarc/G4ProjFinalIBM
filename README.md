@@ -1,5 +1,7 @@
 <h2 align="center">
     Desafio Final - Programa If Black Then Code - Gama Academy & IBM
+    <br>
+    Grupo Panteras Negras
 </h2>
 <p align="center">
 <img src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge"/>
@@ -230,5 +232,19 @@ git clone https://github.com/cassialeaal/G4ProjFinalIBM
                     "id": 5
             }
         }
-     
+   
+ <h2>🎁 Agradecimentos </h2>
+  <h4>Os Panteras Negras gostariam de agradeçer profundamente à IBM pela oportunidade gigante de fazermos parte deste lindo programa de treinamento, o If Black, Then Code. E que deu chance para nós, estudantes pretos(as) e pardos(as), de ampliarmos nossas habilidades, hard skills e soft skills, e assim nos qualificarmos na área de desenvolvimento Back End e DevOps (Java).
+      Agradeçemos também à Gama Academy e seus Yellow Belts pelo apoio e atenção ao longo dessas 8 semanas de treinamento, e aos professores Isidro em suas espetaculares aulas assíncronas, Ricardo Alexandre Bontempo em suas suuuuper monitorias, e ao professor Danilo Aparecido pelas aulas incríveis de DevOps e suas dicas essenciais de mercado de trabalho. Todos foram incríveis!
+  <h4>
     
+<br>
+
+<p align="center">
+<img src="https://burnbook.b-cdn.net/wp-content/uploads/2022/03/uhdpaper.com-download-hd-7.2713-@9082647187720256697-1.jpg" style="width: 60%;" alt="Agradecimento"/>
+</p>
+ 
+<h4 align="center">
+            Agora está na hora de mostrar ao mundo quem nós somos! - Pantera Negra, filme.
+</h4>
+
