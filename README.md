@@ -89,7 +89,6 @@ e uma API para cadastro, atualização, listagem e exclusão de clientes e/ou co
 - [Spring Boot](https://spring.io/projects/spring-boot)
 - [MySQL](https://www.mysql.com/)
 
-
 ### ⚙️ Funcionalidades
 - Criação de conta bancária;
 - Operações de depósito, saque e transferência entre contas;
@@ -108,11 +107,12 @@ e uma API para cadastro, atualização, listagem e exclusão de clientes e/ou co
 ## Como executar?
 
 ### Clonar o repositório:
- <p>Para executar o projeto, basta realizar o clone do repositório utilizando o comando:
-    ``` 
-    ./run.sh
-    ```
-</p>
+<p>Para executar o projeto, basta realizar o clone do repositório utilizando o comando:</p>
+    
+``` 
+./run.sh
+```
+
 
 ## Endpoints
 
@@ -178,7 +178,7 @@ O modelo Json para este método é:
 
 Nova Transferência (POST)
  
-    localhost:8080/operacao/transferencia}
+    localhost:8080/operacao/transferencia
 
 O modelo Json para este método é:
 
@@ -315,10 +315,10 @@ Excluir Endereço (DELETE)
 
         }
     }
+ </p>
 
- </p>
-   
- </p>
+![](.pipeline.png)
+
  <br>
  <h2>🎁 Agradecimentos </h2>
   <h4>Os Panteras Negras gostariam de agradeçer profundamente à IBM pela oportunidade gigante de fazermos parte deste lindo programa de treinamento, o If Black, Then Code. E que deu chance para nós, estudantes pretos(as) e pardos(as), de ampliarmos nossas habilidades, hard skills e soft skills, e assim nos qualificarmos na área de desenvolvimento Back End e DevOps (Java).
