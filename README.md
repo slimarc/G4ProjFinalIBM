@@ -109,8 +109,9 @@ e uma API para cadastro, atualização, listagem e exclusão de clientes e/ou co
 
 ### Clonar o repositório:
  <p>Para executar o projeto, basta realizar o clone do repositório utilizando o comando:
-    
-    git clone https://github.com/cassialeaal/G4ProjFinalIBM
+    ``` 
+    ./run.sh
+    ```
 </p>
 
 ## Endpoints
@@ -224,8 +225,8 @@ O modelo Json para este método é:
         "uf":"PE",
         "cep":"00000-000",
         "cliente": {
-        "id": 2
-        }
+            "id": 2
+            }
     }
 
 Listar Endereços (GET)
@@ -251,15 +252,72 @@ O modelo Json para este método é:
         "uf": "PE",
         "cep": "00000-000",
         "cliente": {
-        "id": 5
-        }
+            "id": 5
+            }
     }
         
 Excluir Endereço (DELETE)
     
     localhost:8080/enderecos/delete/{enderecoId}
     
+ ## Pipeline Jenkins
+ 
+ <p>
+    A pipeline foi desenvolvida com Jenkins rodando no localhost. 
     
+    
+    pipeline {
+        agent any
+
+        stages {
+            stage('Git-Clone') {
+                steps {
+                    git url: "https://github.com/slimarc/G4ProjFinalIBM.git"
+                }
+            }
+
+            stage('Clean') {
+                steps {
+                    bat "mvn clean"
+                }
+            }
+
+            stage('Build') {
+                steps {
+                    bat "mvn package -Dmaven.test.skip"
+                }
+            }
+
+            stage('Test') {
+                steps {
+                    bat "mvn test"
+                }
+            }
+
+            stage('Prepara-Dockerfile'){
+                steps{
+                    bat "echo FROM openjdk:11-jdk > Dockerfile"
+                    bat "echo COPY target/*.jar app.jar >> Dockerfile"
+                    bat "echo ENTRYPOINT [\"java\",\"-jar\",\"/app.jar\"] >> Dockerfile"
+                }
+            }
+            stage('Build-docker'){
+                steps{
+                    bat "docker build -t api-hellobank ."
+                }
+            }
+            stage('Deploy'){
+                steps{
+                    bat "docker rm api-hellobank --force"
+                    bat "docker run -d --net=host --env USER=ROOT --env PASSWORD=mysql --env HOST=172.27.208.1 --env DATABASE=hellobank -p 8080:8080 --name api-hellobank api-hellobank"
+                }
+            }
+
+        }
+    }
+
+ </p>
+   
  </p>
  <br>
  <h2>🎁 Agradecimentos </h2>
