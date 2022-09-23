@@ -317,7 +317,7 @@ Excluir Endereço (DELETE)
     }
  </p>
 
-![](.pipeline.png)
+![](pipeline.png)
 
  <br>
  <h2>🎁 Agradecimentos </h2>
