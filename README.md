@@ -106,8 +106,8 @@ e uma API para cadastro, atualização, listagem e exclusão de clientes e/ou co
 
 ## Como executar?
 
-### Clonar o repositório:
-<p>Para executar o projeto, basta realizar o clone do repositório utilizando o comando:</p>
+### Linha de comando:
+<p>Para executar o projeto, basta realizar utilizando o comando:</p>
     
 ``` 
 ./run.sh
